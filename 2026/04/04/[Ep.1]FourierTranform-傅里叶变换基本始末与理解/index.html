@@ -13,7 +13,7 @@
 
 
 
-<title>FourierTransform_基本傅里叶变换始末与理解角度 | Hexo</title>
+<title>[Ep.1]FourierTransform_基本傅里叶变换始末与理解角度 | Hexo</title>
 
 
 
@@ -242,7 +242,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">FourierTransform_基本傅里叶变换始末与理解角度</h1>
+            <h1 class="post-title">[Ep.1]FourierTransform_基本傅里叶变换始末与理解角度</h1>
             
                 <div class="post-meta">
                     
@@ -260,7 +260,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="基本傅里叶变换始末与理解角度"><a href="#基本傅里叶变换始末与理解角度" class="headerlink" title="基本傅里叶变换始末与理解角度"></a>基本傅里叶变换始末与理解角度</h1><h3 id="信号与系统-signal-and-system-傅里叶变换"><a href="#信号与系统-signal-and-system-傅里叶变换" class="headerlink" title="#信号与系统#signal and system#傅里叶变换"></a>#信号与系统#signal and system#<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&zhida_source=entity">傅里叶变换</a></h3><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a><strong><em>Abstract</em></strong></h3><p><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E3%80%8A%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E3%80%8B&zhida_source=entity">《信号与系统》</a>中傅里叶变换这种经典公式如何理解？傅里叶变换到底干了一件什么事情？为什么傅里叶变换就是所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E6%97%B6%E5%9F%9F&zhida_source=entity">时域</a>到<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E9%A2%91%E5%9F%9F&zhida_source=entity">频域</a>的转换？求出来的 $X(\omega)$ 到底是个啥？为什么引入一个 $e^{jwt}$ ？为什么有的书里莫名其妙扔个所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0&zhida_source=entity">特征函数</a> $\delta(t)$ &#x2F; $e^{jwt}$ 进入<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=LTI%E7%B3%BB%E7%BB%9F&zhida_source=entity">LTI系统</a>来看系统的时域&#x2F;频域响应？</p>
+            <h3 id="信号与系统-signal-and-system-傅里叶变换"><a href="#信号与系统-signal-and-system-傅里叶变换" class="headerlink" title="#[信号与系统]#[signal and system]#傅里叶变换"></a>#[信号与系统]#[signal and system]#<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&zhida_source=entity">傅里叶变换</a></h3><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a><strong><em>Abstract</em></strong></h3><p><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E3%80%8A%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E3%80%8B&zhida_source=entity">《信号与系统》</a>中傅里叶变换这种经典公式如何理解？傅里叶变换到底干了一件什么事情？为什么傅里叶变换就是所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E6%97%B6%E5%9F%9F&zhida_source=entity">时域</a>到<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E9%A2%91%E5%9F%9F&zhida_source=entity">频域</a>的转换？求出来的 $X(\omega)$ 到底是个啥？为什么引入一个 $e^{jwt}$ ？为什么有的书里莫名其妙扔个所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0&zhida_source=entity">特征函数</a> $\delta(t)$ &#x2F; $e^{jwt}$ 进入<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=LTI%E7%B3%BB%E7%BB%9F&zhida_source=entity">LTI系统</a>来看系统的时域&#x2F;频域响应？</p>
 <h3 id="Main-body"><a href="#Main-body" class="headerlink" title="Main body"></a><strong><em>Main body</em></strong></h3><p>我们有逻辑性的，从公式层面来反向理解先贤们的思想。</p>
 <p>首先说说信号：对于一个有乱七八糟各种成分的时域信号（TD)，我们想要写出它的表达式有两种方法：</p>
 <p>一种是x(t)&#x3D;时域成分（TD）的写法： $x(t) &#x3D; \int_{-\infty}^{\infty} x(\tau), \delta(t - \tau) , d\tau$ ，此处 $\delta$ 为冲激函数，等号右边都是用时域成分</p>
@@ -269,7 +269,7 @@
 <p>$x(t) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega), e^{j\omega t} , d\omega$ （若x(t)是非周期的）</p>
 <p>其中：$X(\omega) &#x3D; \int_{-\infty}^{\infty} x(t) e^{-j\omega t} , dt$ （Fourier Transformation)</p>
 <p>傅里叶变换就是频域相关的，所以我们聚焦于第二种。</p>
-<p>求傅里叶系数就是求其中的 $C_n$ ，求傅里叶变换就是求其中的 $X(\omega)$ ，假如我们只观察公式会发现：非周期信号的表达其实和周期信号十分类似，都是以看起来像某种系数的 $X(\omega)$&#x2F;$C_n$ ，乘上 $e^{jwt}$ 表达，求$X(\omega)$&#x2F;$C_n$都是以 $x(t)$ 内积$e^{j\omega t}$的形式**_，这该如何从较为原理性的角度共通理解呢？_**</p>
+<p>求傅里叶系数就是求其中的 $C_n$ ，求傅里叶变换就是求其中的 $X(\omega)$ ，假如我们只观察公式会发现：非周期信号的表达其实和周期信号十分类似，都是以看起来像某种系数的 $X(\omega)$&#x2F;$C_n$ ，乘上 $e^{jwt}$ 表达，求$X(\omega)$&#x2F;$C_n$都是以 $x(t)$ 内积$e^{j\omega t}$的形式**_，这该如何从较为原理性的角度共通理解呢？_**<br><br></p>
 <hr>
 <p><strong><em>首先，</em></strong>$X(\omega)$&#x2F;$C_n$和$e^{jwt}$ <strong><em>代表了什么？</em></strong><br><br></p>
 <p>以周期信号为例子，我们学过任何<strong>周期</strong>信号(periodic)都可以表达为：</p>
@@ -358,7 +358,7 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2026/04/03/%5BAnnouncement%5DHi-this-is-Marcelino-Yeung/">Hi, this is Marcelino Yeung</a>
+            <a class="next" rel="next" href="/2026/04/03/%5BAnnouncement%5DHi-this-is-Marcelino-Yeung/">[Announcement]Hi, this is Marcelino Yeung</a>
             
         </section>
 
