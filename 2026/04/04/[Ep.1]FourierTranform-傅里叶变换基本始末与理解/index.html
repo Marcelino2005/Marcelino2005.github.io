@@ -261,50 +261,55 @@
         </header>
 
         <div class="post-content">
-            <h3 id="信号与系统-signal-and-system-傅里叶变换"><a href="#信号与系统-signal-and-system-傅里叶变换" class="headerlink" title="#[信号与系统]#[signal and system]#傅里叶变换"></a>#[信号与系统]#[signal and system]#<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&zhida_source=entity">傅里叶变换</a></h3><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a><strong><em>Abstract</em></strong></h3><p><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E3%80%8A%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E3%80%8B&zhida_source=entity">《信号与系统》</a>中傅里叶变换这种经典公式如何理解？傅里叶变换到底干了一件什么事情？为什么傅里叶变换就是所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E6%97%B6%E5%9F%9F&zhida_source=entity">时域</a>到<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E9%A2%91%E5%9F%9F&zhida_source=entity">频域</a>的转换？求出来的 $X(\omega)$ 到底是个啥？为什么引入一个 $e^{jwt}$ ？为什么有的书里莫名其妙扔个所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0&zhida_source=entity">特征函数</a> $\delta(t)$ &#x2F; $e^{jwt}$ 进入<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=LTI%E7%B3%BB%E7%BB%9F&zhida_source=entity">LTI系统</a>来看系统的时域&#x2F;频域响应？</p>
-<h3 id="Main-body"><a href="#Main-body" class="headerlink" title="Main body"></a><strong><em>Main body</em></strong></h3><p>我们有逻辑性的，从公式层面来反向理解先贤们的思想。</p>
+            <h3 id="信号与系统-signal-and-system-傅里叶变换">#[信号与系统]#[signal and system]#<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&amp;zhida_source=entity">傅里叶变换</a></h3>
+<h3 id="Abstract"><strong><em>Abstract</em></strong></h3>
+<p><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E3%80%8A%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E3%80%8B&amp;zhida_source=entity">《信号与系统》</a>中傅里叶变换这种经典公式如何理解？傅里叶变换到底干了一件什么事情？为什么傅里叶变换就是所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E6%97%B6%E5%9F%9F&amp;zhida_source=entity">时域</a>到<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E9%A2%91%E5%9F%9F&amp;zhida_source=entity">频域</a>的转换？求出来的 $X(\omega)$ 到底是个啥？为什么引入一个 $e^{jwt}$ ？为什么有的书里莫名其妙扔个所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0&amp;zhida_source=entity">特征函数</a> $\delta(t)$ / $e^{jwt}$ 进入<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=LTI%E7%B3%BB%E7%BB%9F&amp;zhida_source=entity">LTI系统</a>来看系统的时域/频域响应？</p>
+<h3 id="Main-body"><strong><em>Main body</em></strong></h3>
+<p>我们有逻辑性的，从公式层面来反向理解先贤们的思想。</p>
 <p>首先说说信号：对于一个有乱七八糟各种成分的时域信号（TD)，我们想要写出它的表达式有两种方法：</p>
-<p>一种是x(t)&#x3D;时域成分（TD）的写法： $x(t) &#x3D; \int_{-\infty}^{\infty} x(\tau), \delta(t - \tau) , d\tau$ ，此处 $\delta$ 为冲激函数，等号右边都是用时域成分</p>
-<p>一种是x(t)&#x3D;频域成分（FD）的写法： $x(t) &#x3D; \sum_{n&#x3D;-\infty}^{\infty} C_n e^{j \omega_n t}$ （若x(t)是周期的）</p>
-<p>其中：$C_n &#x3D; \frac{1}{T} \int_{t_0}^{t_0 + T} x(t) e^{-j n \omega_0 t} , dt$</p>
-<p>$x(t) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega), e^{j\omega t} , d\omega$ （若x(t)是非周期的）</p>
-<p>其中：$X(\omega) &#x3D; \int_{-\infty}^{\infty} x(t) e^{-j\omega t} , dt$ （Fourier Transformation)</p>
+<p>一种是x(t)=时域成分（TD）的写法： $x(t) = \int_{-\infty}^{\infty} x(\tau), \delta(t - \tau) , d\tau$ ，此处 $\delta$ 为冲激函数，等号右边都是用时域成分</p>
+<p>一种是x(t)=频域成分（FD）的写法： $x(t) = \sum_{n=-\infty}^{\infty} C_n e^{j \omega_n t}$ （若x(t)是周期的）</p>
+<p>其中：$C_n = \frac{1}{T} \int_{t_0}^{t_0 + T} x(t) e^{-j n \omega_0 t} , dt$</p>
+<p>$x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega), e^{j\omega t} , d\omega$ （若x(t)是非周期的）</p>
+<p>其中：$X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} , dt$ （Fourier Transformation)</p>
 <p>傅里叶变换就是频域相关的，所以我们聚焦于第二种。</p>
-<p>求傅里叶系数就是求其中的 $C_n$ ，求傅里叶变换就是求其中的 $X(\omega)$ ，假如我们只观察公式会发现：非周期信号的表达其实和周期信号十分类似，都是以看起来像某种系数的 $X(\omega)$&#x2F;$C_n$ ，乘上 $e^{jwt}$ 表达，求$X(\omega)$&#x2F;$C_n$都是以 $x(t)$ 内积$e^{j\omega t}$的形式**_，这该如何从较为原理性的角度共通理解呢？_**<br><br></p>
+<p>求傅里叶系数就是求其中的 $C_n$ ，求傅里叶变换就是求其中的 $X(\omega)$ ，假如我们只观察公式会发现：非周期信号的表达其实和周期信号十分类似，都是以看起来像某种系数的 $X(\omega)$/$C_n$ ，乘上 $e^{jwt}$ 表达，求$X(\omega)$/$C_n$都是以 $x(t)$ 内积$e^{j\omega t}$的形式**<em>，这该如何从较为原理性的角度共通理解呢？</em>**<br>
+<br></p>
 <hr>
-<p><strong><em>首先，</em></strong>$X(\omega)$&#x2F;$C_n$和$e^{jwt}$ <strong><em>代表了什么？</em></strong><br><br></p>
+<p><strong><em>首先，</em></strong>$X(\omega)$/$C_n$和$e^{jwt}$ <strong><em>代表了什么？</em></strong><br>
+<br></p>
 <p>以周期信号为例子，我们学过任何<strong>周期</strong>信号(periodic)都可以表达为：</p>
-<p>$x(t) &#x3D; \frac{a_0}{2} + \sum_{n&#x3D;1}^{\infty} \left[ a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t) \right]$</p>
-<p>观察可以发现周期时域信号 $x(t)$ 可以由**三种类型正交分量（基信号）共同组成:1、cos和sin（可自行验证任意两个都是内积分为0），以及它们各自的系数。**而因为最神的 $e^{j\omega t} &#x3D; \cos(\omega t) + j \sin(\omega t)$ ，则$\cos(n\omega t) &#x3D; \frac{e^{j n \omega t} + e^{-j n \omega t}}{2}$ 和 $\sin(n\omega t) &#x3D; \frac{e^{j n \omega t} - e^{-j n \omega t}}{2j}$ ，则这三种互相正交的基信号可以集成化由 $e^{j \omega t}$ 来表示。</p>
+<p>$x(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos(n\omega_0 t) + b_n \sin(n\omega_0 t) \right]$</p>
+<p>观察可以发现周期时域信号 $x(t)$ 可以由**三种类型正交分量（基信号）共同组成:1、cos和sin（可自行验证任意两个都是内积分为0），以及它们各自的系数。**而因为最神的 $e^{j\omega t} = \cos(\omega t) + j \sin(\omega t)$ ，则$\cos(n\omega t) = \frac{e^{j n \omega t} + e^{-j n \omega t}}{2}$ 和 $\sin(n\omega t) = \frac{e^{j n \omega t} - e^{-j n \omega t}}{2j}$ ，则这三种互相正交的基信号可以集成化由 $e^{j \omega t}$ 来表示。</p>
 <p>因此周期信号可以写成我们熟悉的（Fourier Series):</p>
-<p>$x(t) &#x3D; \sum_{n&#x3D;-\infty}^{\infty} C_n e^{j \omega_n t}$</p>
-<p>其中 $\omega_n &#x3D; n \omega_0$， $e^{j \omega_n t}$ 就是代表了组成时域信号x(t)的基信号，而$C_n$ 是其傅里叶系数(Fourier Coefficients),远比之前的更加简洁集成。</p>
+<p>$x(t) = \sum_{n=-\infty}^{\infty} C_n e^{j \omega_n t}$</p>
+<p>其中 $\omega_n = n \omega_0$， $e^{j \omega_n t}$ 就是代表了组成时域信号x(t)的基信号，而$C_n$ 是其傅里叶系数(Fourier Coefficients),远比之前的更加简洁集成。</p>
 <p>所以，周期信号的频域表达式中 $e^{j\omega t}$ 就是能组成 $x(t)$ 的不同频率的基信号， $C_n$ 就是这些基信号的权重系数。同理类似，$e^{j\omega t}$ 也是能组成非周期信号$x(t)$ 的不同频率的基信号，而$X(\omega)$ 也是其基信号的权重系数。</p>
 <hr>
 <p><strong><em>那么求</em></strong> $C_n$ <strong><em>和</em></strong> $X(\omega)$ <strong><em>又是什么原理呢,它们有什么特性？</em></strong></p>
 <p>我们这里以求非周期信号中的$X(\omega)$，也就是傅里叶变换为例：</p>
-<p>这里理解需要引入前置知识，先简单的考虑一组向量 $\mathbf{a} &#x3D; [a_1, a_2, \dots, a_n]$ , $\mathbf{b} &#x3D; [b_1, b_2, \dots, b_n]$ ，那么他们的内积是 $\sum_{i&#x3D;1}^{n} a_i b_i$ 。这里的意义是：如果向量 a和b正交，那么内积是0，反之不为0。利用这个特性思想升级：<strong>对于由一组正交基线性叠加的东西A，我们想判断这个A里面有无单位分量b，则让A和b内积就好了，如果内积不为0，则A里面有这个b的成分，并且内积的结果是该成分在A里面的系数。</strong></p>
+<p>这里理解需要引入前置知识，先简单的考虑一组向量 $\mathbf{a} = [a_1, a_2, \dots, a_n]$ , $\mathbf{b} = [b_1, b_2, \dots, b_n]$ ，那么他们的内积是 $\sum_{i=1}^{n} a_i b_i$ 。这里的意义是：如果向量 a和b正交，那么内积是0，反之不为0。利用这个特性思想升级：<strong>对于由一组正交基线性叠加的东西A，我们想判断这个A里面有无单位分量b，则让A和b内积就好了，如果内积不为0，则A里面有这个b的成分，并且内积的结果是该成分在A里面的系数。</strong></p>
 <p>这个思想十分常见，</p>
-<p>比如离散函数的内积： $\langle x[n], y[n] \rangle &#x3D; \sum_{n&#x3D;-\infty}^{\infty} x[n], y^*[n]$ ，（其中*是共轭， $y[n]$ 是归一化为单位大小），</p>
-<p>有无感觉和周期信号 $x(t) &#x3D; \sum_{n&#x3D;-\infty}^{\infty} C_n e^{j \omega_n t}$ 非常像呢。</p>
-<p>又比如连续函数，（连续 $\rightarrow$ 积分），即：$\langle f(t), g(t) \rangle &#x3D; \int_{-\infty}^{\infty} f(t), g^*(t), dt$ 。</p>
-<p>我们转而看到非周期函数<strong>傅里叶变换，<strong>是否感觉也非常像呢</strong>：</strong> $X(\omega) &#x3D; \int_{-\infty}^{\infty} x(t) e^{-j\omega t} , dt$ 我们这里以非周期信号求频域基信号系数（傅里叶变换）详细说一说（求 $C_n$ 相同理解）:这里 $e^{j\omega t}$ 这个东西不仅是一组正交基，而且大小还真为1，完全符合前置知识里对b的描述。因此我们可以把这个经典公式理解为：对于时域信号 $x(t)$ ，它由各种乱七八糟的分量信号组成，为了判断它是否有信号分量 $e^{jwt}$ （ $w$ 是变量），就对 $x(t)$ 内积 $e^{j\omega t}$，该内积结果$X(\omega)$ 就代表了在x(t)中对应不同w值的 $e^{jwt}$ 分量的系数。</p>
+<p>比如离散函数的内积： $\langle x[n], y[n] \rangle = \sum_{n=-\infty}^{\infty} x[n], y^*[n]$ ，（其中*是共轭， $y[n]$ 是归一化为单位大小），</p>
+<p>有无感觉和周期信号 $x(t) = \sum_{n=-\infty}^{\infty} C_n e^{j \omega_n t}$ 非常像呢。</p>
+<p>又比如连续函数，（连续 $\rightarrow$ 积分），即：$\langle f(t), g(t) \rangle = \int_{-\infty}^{\infty} f(t), g^*(t), dt$ 。</p>
+<p>我们转而看到非周期函数<strong>傅里叶变换，<strong>是否感觉也非常像呢</strong>：</strong> $X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} , dt$ 我们这里以非周期信号求频域基信号系数（傅里叶变换）详细说一说（求 $C_n$ 相同理解）:这里 $e^{j\omega t}$ 这个东西不仅是一组正交基，而且大小还真为1，完全符合前置知识里对b的描述。因此我们可以把这个经典公式理解为：对于时域信号 $x(t)$ ，它由各种乱七八糟的分量信号组成，为了判断它是否有信号分量 $e^{jwt}$ （ $w$ 是变量），就对 $x(t)$ 内积 $e^{j\omega t}$，该内积结果$X(\omega)$ 就代表了在x(t)中对应不同w值的 $e^{jwt}$ 分量的系数。</p>
 <p>我们由此可知傅里叶变换得到的结果 $X(\omega)$ 就是一个和频率 $\omega$ 有关的系数表达式，是时域信号按照**<em>不同频率</em><strong>的正交信号拆分的系数，所以都是</strong><em>频域</em>**上的量，我大概草绘了一下那张很经典的图：</p>
-<p><img src="https://picx.zhimg.com/50/v2-8f945fba25dad3a39e7fc4ad1c530d39_720w.jpg?source=c8b7c179"></p>
+<p><img src="https://picx.zhimg.com/50/v2-8f945fba25dad3a39e7fc4ad1c530d39_720w.jpg?source=c8b7c179" alt=""></p>
 <p>Fig. 1 Time-domain signal and its component signals with frequency-domain values (magnitude and phase spectra), plotted by Marcelino Yeung</p>
-<p>（这里为了便于读者查看，就故意画成看起来像是离散的一个一个的cosine&#x2F;sine（ $e^{j\omega t}$ ）分量了，实际上对于周期信号来说是离散的，但是对于非周期信号来说是连续的）</p>
-<p>显然，这个图中，彩色的就是我们所谓的基信号，而我们傅里叶变换求出的系数 $X(\omega) &#x3D; |X(\omega)| e^{j \angle X(\omega)}$ 包括了两个关键量:<strong>幅值</strong>（ $|X(\omega)|$ ）和<strong>相位</strong>（ $\angle X(\omega)$ ），就是左边两个黑色坐标轴的图像；工程上研究周期或者非周期信号，组成它的基信号没什么好说的，就是若干个不同频率( $w$ )的 $e^{j\omega t}$ 的形式。但是每个基信号的系数尤为重要，<strong>系数反应了这个频率基信号分量在总信号中贡献的幅度（amplitude）—它在总信号中赋值中贡献的重要程度，和该频率基信号出现的相位差–滞后（lagging）or 领先（leading）</strong>，</p>
+<p>（这里为了便于读者查看，就故意画成看起来像是离散的一个一个的cosine/sine（ $e^{j\omega t}$ ）分量了，实际上对于周期信号来说是离散的，但是对于非周期信号来说是连续的）</p>
+<p>显然，这个图中，彩色的就是我们所谓的基信号，而我们傅里叶变换求出的系数 $X(\omega) = |X(\omega)| e^{j \angle X(\omega)}$ 包括了两个关键量:<strong>幅值</strong>（ $|X(\omega)|$ ）和<strong>相位</strong>（ $\angle X(\omega)$ ），就是左边两个黑色坐标轴的图像；工程上研究周期或者非周期信号，组成它的基信号没什么好说的，就是若干个不同频率( $w$ )的 $e^{j\omega t}$ 的形式。但是每个基信号的系数尤为重要，<strong>系数反应了这个频率基信号分量在总信号中贡献的幅度（amplitude）—它在总信号中赋值中贡献的重要程度，和该频率基信号出现的相位差–滞后（lagging）or 领先（leading）</strong>，</p>
 <p>这也是为什么实际做题或者应用的时候总是要画幅值图（magnitude spectrum）和相位图（phase spectrum），因为频域参数主要就是指这两个。</p>
 <p>傅里叶系数（周期信号）或傅里叶变换（非周期信号）就是做了这样一件事： 时域信号x(t) 拆分表示为系数 $C_n$ 或者$X(\omega)$ 乘不同频率的 $e^{j\omega t}$ ，然后研究系数—其大小或者相位差</p>
 <p>即： 时域 → 频域</p>
 <hr>
 <p>接下来说说系统：对于一个系统，给一个输入信号，就会得到一个输出信号；研究这个系统的特征，就是研究它对输入信号是怎么处理的。简单考虑这样一件事情：输入一个5，得到一个5C，那么肯定是系统响应是对信号放大C倍。**我们要想比较容易的看出一个系统的响应，那么可以以线性叠加的思想，输入一个组成该信号的单位信号进去，就可以轻易看出响应是怎么样的。**数值”5“是由5个1组成的，所以，我们直接输入1进去，出来一个C就代表了系统响应。</p>
-<p>那么我们回顾一下前面所说的一个信号时域 $\leftrightarrow$ 时域的表达式： $x(t) &#x3D; \int_{-\infty}^{\infty} x(\tau), \delta(t - \tau) , d\tau$ ，这里代表了任何时域信号都可以是由一堆不同的冲激信号线性组成的，所以单位冲激信号 $\delta(t)$ 是一种单位信号，就相当于上面简单例子里的”1“。所以，我们探究各种系统响应，都可以使用其作为<strong>测试信号</strong>用于<strong>测试系统响应</strong>。$测试信号\delta(t) → [ LTI system ] → h(t)$</p>
-<p>[由于时域系统响应是<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&content_type=Answer&match_order=1&q=%E5%8D%B7%E7%A7%AF&zhida_source=entity">卷积</a>（此处不过多赘述，网络已有很多解释模型了） $\int_{-\infty}^{\infty} \delta(\tau), h(t-\tau), d\tau &#x3D; h(t)$ ，且定义LTI系统对于单位冲激信号的响应是 $h(t)$ ]</p>
-<p>所以在时域层面上，输入一个 $x(t)$ 的结果是： $x(t)^*h(t)&#x3D;y(t)$</p>
+<p>那么我们回顾一下前面所说的一个信号时域 $\leftrightarrow$ 时域的表达式： $x(t) = \int_{-\infty}^{\infty} x(\tau), \delta(t - \tau) , d\tau$ ，这里代表了任何时域信号都可以是由一堆不同的冲激信号线性组成的，所以单位冲激信号 $\delta(t)$ 是一种单位信号，就相当于上面简单例子里的”1“。所以，我们探究各种系统响应，都可以使用其作为<strong>测试信号</strong>用于<strong>测试系统响应</strong>。$测试信号\delta(t) → [ LTI system ] → h(t)$</p>
+<p>[由于时域系统响应是<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E5%8D%B7%E7%A7%AF&amp;zhida_source=entity">卷积</a>（此处不过多赘述，网络已有很多解释模型了） $\int_{-\infty}^{\infty} \delta(\tau), h(t-\tau), d\tau = h(t)$ ，且定义LTI系统对于单位冲激信号的响应是 $h(t)$ ]</p>
+<p>所以在时域层面上，输入一个 $x(t)$ 的结果是： $x(t)^*h(t)=y(t)$</p>
 <p>我之前还说了时域信号 $x(t)$ 还可以按照频率来拆解，其中基信号 $e^{j\omega t}$ 也可以当作单位信号用于测试响应（频率层面）</p>
-<p>$测试信号 e^{j\omega t} → [ LTI system ] →  e^{j\omega t}H(jw)$ <strong><em>proof:</em></strong> $\int_{-\infty}^{\infty} e^{j\omega \tau}, h(t-\tau), d\tau &#x3D; \int_{-\infty}^{\infty} e^{j\omega t} e^{-j\omega (t-\tau)} h(t-\tau), d\tau&#x3D; e^{j\omega t} \int_{-\infty}^{\infty} h(t-\tau), e^{-j\omega (t-\tau)} d\tau &#x3D; e^{j\omega t} H(j\omega)$</p>
-<p>显然，此处系统响应是频率层面响应（Frequency response）就是 $H(jw)$ 。 $X(w)H(w)&#x3D;Y(w)$，其中的 $H(jw)$ 和 $h(t)$ 的关系就是后者傅里叶变换到前者。</p>
+<p>$测试信号 e^{j\omega t} → [ LTI system ] →  e^{j\omega t}H(jw)$ <strong><em>proof:</em></strong> $\int_{-\infty}^{\infty} e^{j\omega \tau}, h(t-\tau), d\tau = \int_{-\infty}^{\infty} e^{j\omega t} e^{-j\omega (t-\tau)} h(t-\tau), d\tau= e^{j\omega t} \int_{-\infty}^{\infty} h(t-\tau), e^{-j\omega (t-\tau)} d\tau = e^{j\omega t} H(j\omega)$</p>
+<p>显然，此处系统响应是频率层面响应（Frequency response）就是 $H(jw)$ 。 $X(w)H(w)=Y(w)$，其中的 $H(jw)$ 和 $h(t)$ 的关系就是后者傅里叶变换到前者。</p>
 <p>相信到此处，你肯定知道为什么 $e^{j\omega t}$ 总是被称作特征函数了吧。</p>
 <p>* <strong>这里是一些本人的理解方式，不严谨的地方欢迎指正，谢谢</strong></p>
 
