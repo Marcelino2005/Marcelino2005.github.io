@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   canvas.height = window.innerHeight
   const ctx = canvas.getContext('2d')
 
-  const TOTAL = 32
+  const TOTAL = 38
   const petalArray = []
 
   const petalImg = new Image()

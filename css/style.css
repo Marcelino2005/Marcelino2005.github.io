@@ -1331,3 +1331,11 @@ body.dark-theme .highlight .code .meta {
   z-index: -1;
   pointer-events: none;
 }
+.post-meta-bottom {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
