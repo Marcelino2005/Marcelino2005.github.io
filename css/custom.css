@@ -16,3 +16,21 @@
   color: #bbb;
   opacity: 0.7;
 }
+#waline {
+  margin-top: 60px;
+}
+#waline .wl-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+#waline .wl-editor {
+  border-radius: 8px;
+}
+#waline .wl-input {
+  border-radius: 6px;
+}
+#waline .wl-submit {
+  background: #d8a7b8;
+  border: none;
+  border-radius: 6px;
+}
