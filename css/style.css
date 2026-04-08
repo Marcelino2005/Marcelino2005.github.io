@@ -1355,20 +1355,21 @@ body.dark-theme .highlight .code .meta {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
   background: rgba(255,255,255,0.92) !important;
 }
-#waline .wl-panel {
-  border-radius: 12px !important;
-}
 #waline .wl-submit {
-  border-radius: 8px !important;
-  border: none !important;
-  background: #e7b7c7 !important;
+  background: #3aa0ff !important;
   color: #fff !important;
 }
-#waline .wl-sort li {
-  color: #999 !important;
+#waline .wl-submit:hover {
+  background: #2b85d3 !important;
 }
 #waline .wl-sort li.active {
-  color: #d8a7b8 !important;
+  color: #3aa0ff !important;
+}
+#waline .wl-login {
+  color: #3aa0ff !important;
+}
+#waline .wl-login:hover {
+  color: #2b85d3 !important;
 }
 #waline .wl-power {
   display: none !important;
