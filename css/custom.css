@@ -19,18 +19,33 @@
 #waline {
   margin-top: 60px;
 }
-#waline .wl-card {
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
 #waline .wl-editor {
-  border-radius: 8px;
+  border-radius: 12px !important;
+  background: rgba(255,255,255,0.9) !important;
 }
 #waline .wl-input {
-  border-radius: 6px;
+  border-radius: 8px !important;
+}
+#waline .wl-card {
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
+  background: rgba(255,255,255,0.92) !important;
+}
+#waline .wl-panel {
+  border-radius: 12px !important;
 }
 #waline .wl-submit {
-  background: #d8a7b8;
-  border: none;
-  border-radius: 6px;
+  border-radius: 8px !important;
+  border: none !important;
+  background: #e7b7c7 !important;
+  color: #fff !important;
+}
+#waline .wl-sort li {
+  color: #999 !important;
+}
+#waline .wl-sort li.active {
+  color: #d8a7b8 !important;
+}
+#waline .wl-power {
+  display: none !important;
 }
