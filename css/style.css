@@ -1332,10 +1332,11 @@ body.dark-theme .highlight .code .meta {
   pointer-events: none;
 }
 .post-meta-bottom {
-  margin-top: 32px;
-  text-align: center;
-  font-size: 13px;
-  color: #999;
-  letter-spacing: 0.5px;
-  opacity: 0.8;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12px;
+  color: #bbb;
+  opacity: 0.7;
 }
