@@ -221,8 +221,8 @@
             
         </header>
 
-        <div class="post-content">
-            <h3 id="Hi-this-is-Marcelino-Yeung">Hi, this is Marcelino Yeung</h3>
+    <div class="post-content">
+        <h3 id="Hi-this-is-Marcelino-Yeung">Hi, this is Marcelino Yeung</h3>
 <p>This is my personal blog.<br>
 I plan to write some of my academic understandings, discoveries and strategies regarding to electrcial and electronic engineering.</p>
 <p>If you have any questions, thoughts or advice, feel free to contact my email:<br>
@@ -230,7 +230,13 @@ I plan to write some of my academic understandings, discoveries and strategies r
 <br></p>
 <h3 id="Thanks">Thanks</h3>
 
-        </div>
+    </div>
+
+    <div class="post-meta-bottom">
+      👁 <span class="waline-pageview-count" data-path="2026/04/03/[Announcement]Hi-this-is-Marcelino-Yeung/"></span>
+    </div>
+
+ 
 
         
             <section class="post-copyright">
@@ -286,8 +292,25 @@ I plan to write some of my academic understandings, discoveries and strategies r
         </section>
 
 
+            <div id="waline"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      init({
+        el: '#waline',
+        serverURL: 'https://blognp.vercel.app',
+        path: window.location.pathname,
+        pageview: true
+      });
+    </script>
+
+
     </article>
 </div>
+
 
             </div>
             <footer id="footer" class="footer">

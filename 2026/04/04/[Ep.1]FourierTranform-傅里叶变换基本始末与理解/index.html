@@ -260,8 +260,8 @@
             
         </header>
 
-        <div class="post-content">
-            <h3 id="信号与系统-signal-and-system-傅里叶变换">#[信号与系统]#[signal and system]#<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&amp;zhida_source=entity">傅里叶变换</a></h3>
+    <div class="post-content">
+        <h3 id="信号与系统-signal-and-system-傅里叶变换">#[信号与系统]#[signal and system]#<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&amp;zhida_source=entity">傅里叶变换</a></h3>
 <h3 id="Abstract"><strong><em>Abstract</em></strong></h3>
 <p><a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E3%80%8A%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F%E3%80%8B&amp;zhida_source=entity">《信号与系统》</a>中傅里叶变换这种经典公式如何理解？傅里叶变换到底干了一件什么事情？为什么傅里叶变换就是所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E6%97%B6%E5%9F%9F&amp;zhida_source=entity">时域</a>到<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E9%A2%91%E5%9F%9F&amp;zhida_source=entity">频域</a>的转换？求出来的 $X(\omega)$ 到底是个啥？为什么引入一个 $e^{jwt}$ ？为什么有的书里莫名其妙扔个所谓的<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0&amp;zhida_source=entity">特征函数</a> $\delta(t)$ / $e^{jwt}$ 进入<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=770011008&amp;content_type=Answer&amp;match_order=1&amp;q=LTI%E7%B3%BB%E7%BB%9F&amp;zhida_source=entity">LTI系统</a>来看系统的时域/频域响应？</p>
 <h3 id="Main-body"><strong><em>Main body</em></strong></h3>
@@ -313,7 +313,13 @@
 <p>相信到此处，你肯定知道为什么 $e^{j\omega t}$ 总是被称作特征函数了吧。</p>
 <p>* <strong>这里是一些本人的理解方式，不严谨的地方欢迎指正，谢谢</strong></p>
 
-        </div>
+    </div>
+
+    <div class="post-meta-bottom">
+      👁 <span class="waline-pageview-count" data-path="2026/04/04/[Ep.1]FourierTranform-傅里叶变换基本始末与理解/"></span>
+    </div>
+
+ 
 
         
             <section class="post-copyright">
@@ -369,8 +375,25 @@
         </section>
 
 
+            <div id="waline"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      init({
+        el: '#waline',
+        serverURL: 'https://blognp.vercel.app',
+        path: window.location.pathname,
+        pageview: true
+      });
+    </script>
+
+
     </article>
 </div>
+
 
             </div>
             <footer id="footer" class="footer">
