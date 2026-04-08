@@ -372,6 +372,92 @@
         </section>
 
 
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+    <style>
+      #waline {
+        margin-top: 60px;
+      }
+
+      #waline .wl-panel,
+      #waline .wl-card,
+      #waline .wl-editor {
+        border-radius: 12px !important;
+        background: rgba(255,255,255,0.92) !important;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.05) !important;
+      }
+
+      #waline .wl-input,
+      #waline .wl-textarea {
+        border-radius: 8px !important;
+      }
+
+      #waline .wl-submit {
+        background: #e7b7c7 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 8px !important;
+      }
+
+      #waline .wl-sort li {
+        color: #999 !important;
+      }
+
+      #waline .wl-sort li.active {
+        color: #d8a7b8 !important;
+      }
+
+      #waline .wl-power {
+        display: none !important;
+      }
+    </style>
+
+    <script type="module">
+      import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+      init({
+        el: '#waline',
+        serverURL: 'https://blognp.vercel.app',
+        path: '/2026/04/04/%5BEp.1%5DFourierTranform-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%9F%BA%E6%9C%AC%E5%A7%8B%E6%9C%AB%E4%B8%8E%E7%90%86%E8%A7%A3/',
+        pageview: true,
+
+        meta: ['nick', 'mail', 'link'],
+        placeholder: 'Leave your thoughts here...',
+
+        locale: {
+          placeholder: 'Leave your thoughts here...',
+          sofa: 'Be the first to comment~',
+          comment: 'Comments',
+          submit: 'Submit',
+          nick: 'Nickname',
+          mail: 'Email',
+          link: 'Website',
+          login: 'Login',
+          logout: 'Logout',
+          cancel: 'Cancel',
+          word: 'words',
+          gif: 'GIF',
+          more: 'More',
+          preview: 'Preview',
+          emoji: 'Emoji',
+          uploadImage: 'Upload image',
+          seconds: 'seconds ago',
+          minutes: 'minutes ago',
+          hours: 'hours ago',
+          days: 'days ago',
+          now: 'just now',
+          uploading: 'Uploading...',
+          loginInfo: 'Login required',
+          like: 'Like',
+          oldest: 'Oldest',
+          latest: 'Latest',
+          hottest: 'Hottest'
+        }
+      });
+    </script>
+
 
     </article>
 </div>
