@@ -1352,6 +1352,23 @@ body.page-leaving #page-transition {
   transform: translateX(-28px) scale(0.985);
   filter: blur(3px);
 }
+.intro .avatar {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 6px rgba(0,0,0,0.05);
+}
+.intro .avatar a {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  line-height: 0;
+}
+.intro .avatar img {
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+}
 #waline {
   margin-top: 60px;
 }

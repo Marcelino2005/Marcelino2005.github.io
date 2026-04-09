@@ -2,7 +2,6 @@ console.log('page transition loaded');
 
 document.addEventListener('click', function (e) {
   const link = e.target.closest('a');
-
   if (!link) return;
 
   const href = link.getAttribute('href');
@@ -20,22 +19,16 @@ document.addEventListener('click', function (e) {
     e.shiftKey ||
     e.altKey
   ) {
-    console.log('skipped');
     return;
   }
 
   const isExternal = /^https?:\/\//.test(href) && !href.includes(location.hostname);
-  if (isExternal) {
-    console.log('external skipped');
-    return;
-  }
+  if (isExternal) return;
 
   e.preventDefault();
-
-  console.log('adding page-leaving');
   document.body.classList.add('page-leaving');
 
-  setTimeout(() => {
+  setTimeout(function () {
     window.location.href = href;
-  }, 400);
+  }, 450);
 });
