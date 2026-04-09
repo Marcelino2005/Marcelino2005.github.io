@@ -1352,6 +1352,12 @@ body.page-leaving #page-transition {
   transform: translateX(-28px) scale(0.985);
   filter: blur(3px);
 }
+@media screen and (max-width: 768px) {
+  .intro .avatar {
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
 #waline {
   margin-top: 60px;
 }
