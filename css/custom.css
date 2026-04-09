@@ -28,28 +28,6 @@ body.page-leaving #page-transition {
   transform: translateX(-28px) scale(0.985);
   filter: blur(3px);
 }
-.intro .avatar {
-  display: inline-block;
-  border-radius: 50%;
-  overflow: hidden;
-  background: transparent !important;
-  box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
-}
-.intro .avatar a {
-  display: block;
-  border-radius: 50%;
-  overflow: hidden;
-  line-height: 0;
-  background: transparent !important;
-}
-.intro .avatar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  background: transparent !important;
-}
 #waline {
   margin-top: 60px;
 }
