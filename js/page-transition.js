@@ -1,34 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('a[href]');
+console.log('page transition loaded');
 
-  links.forEach(link => {
-    link.addEventListener('click', function (e) {
-      const href = link.getAttribute('href');
+document.addEventListener('click', function (e) {
+  const link = e.target.closest('a');
 
-      if (
-        !href ||
-        href.startsWith('#') ||
-        href.startsWith('javascript:') ||
-        href.startsWith('mailto:') ||
-        href.startsWith('tel:') ||
-        link.target === '_blank' ||
-        e.ctrlKey ||
-        e.metaKey ||
-        e.shiftKey ||
-        e.altKey
-      ) {
-        return;
-      }
+  if (!link) return;
 
-      const isExternal = /^https?:\/\//.test(href) && !href.includes(location.hostname);
-      if (isExternal) return;
+  const href = link.getAttribute('href');
+  console.log('clicked:', href);
 
-      e.preventDefault();
-      document.body.classList.add('page-leaving');
+  if (
+    !href ||
+    href.startsWith('#') ||
+    href.startsWith('javascript:') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('tel:') ||
+    link.target === '_blank' ||
+    e.ctrlKey ||
+    e.metaKey ||
+    e.shiftKey ||
+    e.altKey
+  ) {
+    console.log('skipped');
+    return;
+  }
 
-      setTimeout(() => {
-        window.location.href = href;
-      }, 380);
-    });
-  });
+  const isExternal = /^https?:\/\//.test(href) && !href.includes(location.hostname);
+  if (isExternal) {
+    console.log('external skipped');
+    return;
+  }
+
+  e.preventDefault();
+
+  console.log('adding page-leaving');
+  document.body.classList.add('page-leaving');
+
+  setTimeout(() => {
+    window.location.href = href;
+  }, 400);
 });

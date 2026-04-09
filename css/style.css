@@ -1340,9 +1340,12 @@ body.dark-theme .highlight .code .meta {
   color: #bbb;
   opacity: 0.7;
 }
-.email-text {
-  font-size: 5px;
-  color: #999;
+#page-transition {
+  animation: pageEnter 0.65s ease;
+  will-change: transform, opacity;
+}
+body.page-leaving #page-transition {
+  animation: pageLeave 0.38s ease forwards;
 }
 #waline {
   margin-top: 60px;
@@ -1377,4 +1380,116 @@ body.dark-theme .highlight .code .meta {
 }
 #waline .wl-power {
   display: none !important;
+}
+@-moz-keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateX(16px) scale(0.995);
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+@-webkit-keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateX(16px) scale(0.995);
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+@-o-keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateX(16px) scale(0.995);
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateX(16px) scale(0.995);
+    filter: blur(1.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+@-moz-keyframes pageLeave {
+ {
+    background: #f00 !important;
+  }
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-14px) scale(0.996);
+    filter: blur(1px);
+body
+  }
+}
+@-webkit-keyframes pageLeave {
+ {
+    background: #f00 !important;
+  }
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-14px) scale(0.996);
+    filter: blur(1px);
+body
+  }
+}
+@-o-keyframes pageLeave {
+ {
+    background: #f00 !important;
+  }
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-14px) scale(0.996);
+    filter: blur(1px);
+body
+  }
+}
+@keyframes pageLeave {
+ {
+    background: #f00 !important;
+  }
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-14px) scale(0.996);
+    filter: blur(1px);
+body
+  }
 }
