@@ -17,11 +17,16 @@
   opacity: 0.7;
 }
 #page-transition {
-  animation: pageEnter 0.65s ease;
-  will-change: transform, opacity;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+  will-change: transform, opacity, filter;
 }
 body.page-leaving #page-transition {
-  animation: pageLeave 0.38s ease forwards;
+  opacity: 0;
+  transform: translateX(-28px) scale(0.985);
+  filter: blur(3px);
 }
 #waline {
   margin-top: 60px;
@@ -56,116 +61,4 @@ body.page-leaving #page-transition {
 }
 #waline .wl-power {
   display: none !important;
-}
-@-moz-keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateX(16px) scale(0.995);
-    filter: blur(1.5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-@-webkit-keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateX(16px) scale(0.995);
-    filter: blur(1.5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-@-o-keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateX(16px) scale(0.995);
-    filter: blur(1.5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-@keyframes pageEnter {
-  from {
-    opacity: 0;
-    transform: translateX(16px) scale(0.995);
-    filter: blur(1.5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-@-moz-keyframes pageLeave {
- {
-    background: #f00 !important;
-  }
-  from {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-14px) scale(0.996);
-    filter: blur(1px);
-body
-  }
-}
-@-webkit-keyframes pageLeave {
- {
-    background: #f00 !important;
-  }
-  from {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-14px) scale(0.996);
-    filter: blur(1px);
-body
-  }
-}
-@-o-keyframes pageLeave {
- {
-    background: #f00 !important;
-  }
-  from {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-14px) scale(0.996);
-    filter: blur(1px);
-body
-  }
-}
-@keyframes pageLeave {
- {
-    background: #f00 !important;
-  }
-  from {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-14px) scale(0.996);
-    filter: blur(1px);
-body
-  }
 }
