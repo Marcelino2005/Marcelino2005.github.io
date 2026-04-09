@@ -1340,6 +1340,10 @@ body.dark-theme .highlight .code .meta {
   color: #bbb;
   opacity: 0.7;
 }
+.email-text {
+  font-size: 13px;
+  color: #999;
+}
 #waline {
   margin-top: 60px;
 }
