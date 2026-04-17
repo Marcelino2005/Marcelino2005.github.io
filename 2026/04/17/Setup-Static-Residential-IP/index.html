@@ -13,7 +13,7 @@
 
 
 
-<title>[Announcement]  Hi, this is Marcelino Yeung | Marcelino&#39;s Blog</title>
+<title>[Ap.1]  链式代理配置StaticResIP | Marcelino&#39;s Blog</title>
 
 
 
@@ -42,6 +42,45 @@
 
     
     
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
         
     
 
@@ -137,76 +176,11 @@
               <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[Announcement]  Hi, this is Marcelino Yeung</h1>
+            <h1 class="post-title">[Ap.1]  链式代理配置StaticResIP</h1>
             
                 <div class="post-meta">
                     
@@ -215,7 +189,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">April 3, 2026&nbsp;&nbsp;17:30:00</a>
+                        Date: <a href="#">April 17, 2026&nbsp;&nbsp;10:30:00</a>
                         </span>
                     
                     
@@ -224,14 +198,27 @@
         </header>
 
     <div class="post-content">
-        <h3 id="Hi-this-is-Marcelino-Yeung"><a href="#Hi-this-is-Marcelino-Yeung" class="headerlink" title="Hi, this is Marcelino Yeung"></a>Hi, this is Marcelino Yeung</h3><p>This website is my personal blog.<br>I plan to write some of my academic understandings, discoveries and strategies regarding electrcial and electronic engineering. To certain degree, I think developing personal framework in understanding EEE is a cool thing, thus basically, content are mainly engineering-theory-oriented in my blog website or zhihu (prioritizing intuitive understanding and integration over lengthy theoretical derivations), by the way, some pragmatical application can be found in my github.</p>
-<p>Basically, my sharing in this website centred in several key credoms: Generalizable, Unified, easy-Associative, Nonconventional(private) and Synthesized.</p>
-<p>If you have any questions, thoughts or advice, feel free to contact my email:<br><strong><a href="mailto:&#x70;&#x73;&#106;&#x79;&#97;&#x6e;&#54;&#x32;&#64;&#x6c;&#x69;&#118;&#101;&#114;&#x70;&#111;&#x6f;&#x6c;&#x2e;&#97;&#99;&#x2e;&#117;&#x6b;">psjyan62@liverpool.ac.uk</a></strong><br><br></p>
-<h3 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h3>
+        <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/hans-54-93-58"><img src="https://pica.zhimg.com/v2-477f4c952014669d92052444dc16a7e8_l.jpg?source=32738c0c&needBackground=1" alt="某羧-COOH"></a></p>
+<p><img src="https://picx.zhimg.com/v2-4812630bc27d642f7cafcd6cdeca3d7a.jpg?source=88ceefae"></p>
+<p>XJTLU 某不知名电气鼠</p>
+<p><em><strong>step 1:</strong></em></p>
+<p>在合适的代理网站购买一个海外静态住宅ip，这里不作推荐，你会看到形如：</p>
+<p><img src="https://picx.zhimg.com/v2-4618cfbe754e4d31c45ed25ea3eaa381_1440w.jpg"></p>
+<p><strong><em>step 2：</em></strong></p>
+<p>打开V2rayN&gt;服务器设置&gt;添加[socks]服务器&gt;remarks随意取&gt;手动按照订阅输入地址&#x2F;端口&#x2F;用户名&#x2F;密码&gt;确定</p>
+<p><img src="https://pica.zhimg.com/v2-db7c60294db48433a72a77ca6ffe6068_1440w.jpg"></p>
+<p><img src="https://pic2.zhimg.com/v2-35145fe1729c2f7c0d6cc450ee258543_1440w.jpg"></p>
+<p><strong><em>step 3：</em></strong></p>
+<p>链式代理需要在socks前面加入一个前置代理节点，在住宅ip节点 订阅分组设置&gt;加入前置代理别名（手输入你已有机场某节点名or自动选择加入）</p>
+<p><img src="https://pic3.zhimg.com/v2-c07da691f6053727fa7e594dc6a179a8_1440w.jpg"></p>
+<p>编辑于 2026-04-17 20:12</p>
+<p>・</p>
+<p>江苏</p>
+
     </div>
 
     <div class="post-meta-bottom">
-      🌸 Views: <span class="waline-pageview-count" data-path="/2026/04/03/%5BAnnouncement%5DHi-this-is-Marcelino-Yeung/"></span> 
+      🌸 Views: <span class="waline-pageview-count" data-path="/2026/04/17/Setup-Static-Residential-IP/"></span> 
     </div>
 
  
@@ -247,7 +234,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2026/04/03/%5BAnnouncement%5DHi-this-is-Marcelino-Yeung/">http://example.com/2026/04/03/%5BAnnouncement%5DHi-this-is-Marcelino-Yeung/</a></span>
+                        <span><a href="http://example.com/2026/04/17/Setup-Static-Residential-IP/">http://example.com/2026/04/17/Setup-Static-Residential-IP/</a></span>
                     </p>
                 
                 
@@ -271,7 +258,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/announcement/"># announcement</a>
+                        <a href="/tags/Ap-1/"># Ap.1</a>
                     
                         
                 </span>
@@ -284,8 +271,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2026/04/04/%5BEp.1%5DFourierTranform-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%9F%BA%E6%9C%AC%E5%A7%8B%E6%9C%AB%E4%B8%8E%E7%90%86%E8%A7%A3/">[Ep.1]  信号处理与系统_基本傅里叶变换始末与理解角度方法</a>
             
+            <a class="next" rel="next" href="/2026/04/04/%5BEp.1%5DFourierTranform-%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%9F%BA%E6%9C%AC%E5%A7%8B%E6%9C%AB%E4%B8%8E%E7%90%86%E8%A7%A3/">[Ep.1]  信号处理与系统_基本傅里叶变换始末与理解角度方法</a>
             
         </section>
 
@@ -300,7 +287,7 @@
   init({
     el: '#waline',
     serverURL: 'https://blognp.vercel.app',
-    path: '/2026/04/03/%5BAnnouncement%5DHi-this-is-Marcelino-Yeung/',
+    path: '/2026/04/17/Setup-Static-Residential-IP/',
     pageview: true,
     comment: false
   });
